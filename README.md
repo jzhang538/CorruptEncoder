@@ -8,4 +8,4 @@ For any other implementation details, please refer to our paper **Data Poisoning
 
 Code will come soon!
 
-![img](./assets/cover_CorruptEncoder.png)
+![img](./assets/teasar.png)
