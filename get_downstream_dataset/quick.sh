@@ -1,0 +1,1 @@
+python3 gen_downstream_filelist.py --downstream_task_name imagenet100_B --downstream_train_ratio 1.0 --save_dir ../data/imagenet100_B
