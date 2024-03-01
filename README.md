@@ -5,9 +5,9 @@
 
 This repo is the official implementation of CorruptEncoder in pytorch. 
 
-For any other implementation details, please refer to our paper **Data Poisoning based Backdoor Attacks to Contrastive Learning**. (CVPR 2024) [[Paper](https://arxiv.org/pdf/2211.08229.pdf)]
+For any other implementation details, please refer to our paper: **Data Poisoning based Backdoor Attacks to Contrastive Learning**. (CVPR 2024) [[Paper](https://arxiv.org/pdf/2211.08229.pdf)]
 
-We provide code implementation of pre-training and evaluating clean/backdoored encoders under our default setting (poisoning ratio: 0.5%; number of reference images: 3; number of support reference images: 5 (optional); pre-training dataset: ImageNet100-A; target downstream task: ImageNet100-B). We also provide pre-trained clean encoder, backdoored encoders of **SSL-backdoor**, **PoisonedEncoder** and **CorruptEncoder(+)** for comparison. Each encoder is pre-trained under the same default setting.
+We provide code implementation of pre-training and evaluating clean/backdoored encoders under our default setting **(poisoning ratio: 0.5%; number of reference images: 3; number of support reference images: 5 (optional); pre-training dataset: ImageNet100-A; target downstream task: ImageNet100-B)**. We also provide pre-trained clean encoder, backdoored encoders of **SSL-backdoor**, **PoisonedEncoder** and **CorruptEncoder(+)** for comparison. Each encoder is pre-trained under the same default setting.
 
 ![img](./assets/teasar.png)
 
@@ -35,16 +35,18 @@ Install the [pytorch](https://pytorch.org/). The latest codes are tested on PyTo
 
 3. Generate a poisoned pre-training dataset and the corresponding filelist (please specify the path to ImageNet dataset):
         
+
+        cd generate-poison
         
-        ###
+    	### Use bash
         bash quick.sh
 
-        ### Use CorruptEncoder
+        ### Use command-line: CorruptEncoder
         python3 generate_poisoned_images.py --target-class hunting-dog --support-ratio 0
 
         python3 generate_poisoned_filelist.py --target-class hunting-dog --support-ratio 0
 
-        ### Use CorruptEncoder+
+        ### Use command-line: CorruptEncoder+
         python3 generate_poisoned_images.py --target-class hunting-dog --support-ratio 0.2
 
         python3 generate_poisoned_filelist.py --target-class hunting-dog --support-ratio 0.2
@@ -71,7 +73,7 @@ Install the [pytorch](https://pytorch.org/). The latest codes are tested on PyTo
 
         bash run_test.sh
 
-7. (Optional) We also provide pre-trained clean/backdoored encoders. Download pre-trained encoders from this [[URL](https://drive.google.com/file/d/1N1uFe5UlN8Frh3KsXW4dfmg_Ly4RF-NF/view?usp=sharing)] and put 'ckpt' at the root folder.
+7. (Optional) We also provide pre-trained clean/backdoored encoders. Download pre-trained encoders from this [[URL](https://drive.google.com/file/d/1N1uFe5UlN8Frh3KsXW4dfmg_Ly4RF-NF/view?usp=sharing)] and put 'ckpt' at the root folder. Then run provided scripts in step 5-6.
 
         
         CorruptEncoder
